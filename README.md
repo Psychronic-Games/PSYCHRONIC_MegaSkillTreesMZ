@@ -18,12 +18,59 @@ MEGA SKILL TREES MZ - Complete Skill Tree System.
 
 ## Plugin Commands
 
-- `assignTreeToActor`
-- `removeTreeFromActor`
-- `grantKnowledge`
-- `resetSkillTree`
-- `openSkillTreeScene`
-- `openSkillTreeBuilder`
+### Assign Tree to Actor
+
+- Command: `assignTreeToActor`
+- Description: Give one or more skill trees to an actor
+
+Arguments:
+
+- `actorId` (Actor ID) - type: actor: The actor to receive the tree(s)
+- `treeIds` (Tree IDs) - type: text: Tree IDs to assign (comma-separated, e.g., "1,3,5" or single "2")
+
+### Remove Tree from Actor
+
+- Command: `removeTreeFromActor`
+- Description: Remove a skill tree from an actor
+
+Arguments:
+
+- `actorId` (Actor ID) - type: actor: The actor to remove tree from
+- `treeId` (Tree ID) - type: number: ID of the tree to remove
+
+### Grant Knowledge Points
+
+- Command: `grantKnowledge`
+- Description: Add knowledge points to the party
+
+Arguments:
+
+- `amount` (Amount) - type: number: Amount of knowledge to add (negative to subtract)
+
+### Reset Skill Tree
+
+- Command: `resetSkillTree`
+- Description: Reset all learned skills in a tree for an actor
+
+Arguments:
+
+- `actorId` (Actor ID) - type: actor: The actor whose tree to reset
+- `treeId` (Tree ID) - type: number: ID of the tree to reset
+- `refundKnowledge` (Refund Knowledge) - type: boolean; default: true: Refund spent knowledge points
+
+### Open Skill Tree Scene
+
+- Command: `openSkillTreeScene`
+- Description: Open the skill tree scene for a specific actor
+
+Arguments:
+
+- `actorId` (Actor ID) - type: actor; default: 0: The actor whose trees to show (0 = current leader)
+
+### Open Skill Tree Builder
+
+- Command: `openSkillTreeBuilder`
+- Description: Open the tree builder interface (Builder Mode must be enabled)
 
 ## Parameter Summary
 
@@ -42,17 +89,7 @@ MEGA SKILL TREES MZ - Complete Skill Tree System.
 - classColorIndex: Message color code for class name (0-31, use \c[x] colors)
 - subclassColorIndex: Message color code for subclass name (0-31, use \c[x] colors)
 - skillTrees: Define all available skill trees
-- classBasedTrees: Automatically assign trees to actors based on their class
-- id: Unique ID for this skill tree
-- name: Display name of the skill tree
-- iconIndex: Icon to display for this tree
-- nodes: All nodes in this skill tree
-- id: Unique ID within this tree
-- skillId: The skill learned from this node
-- x: X coordinate in the tree (pixels)
-- y: Y coordinate in the tree (pixels)
-- knowledgeCost: Knowledge points required to learn
-- Additional parameters are documented in the plugin header/help text.
+- classBasedTrees: Open the tree builder interface (Builder Mode must be enabled)
 
 ## Installation
 
